@@ -1,0 +1,23 @@
+<head>
+  <title>Best of 80s</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+</head>
+
+<body>
+  {{> movies}}
+</body>
+
+<template name="movies">
+  <h1>Best of 80s</h1>
+  <ul>
+    {{#each movies}}
+    <li class="{{#if selected}}selected{{/if}}">
+      <img src="{{img}}" />
+      {{title}} - {{year}} {{#if rating}}({{rating}}){{/if}}
+    </li>
+    {{else}}
+    <li>No movies</li>
+    {{/each}}
+  </ul>
+  <button id="like">Like</button>
+</template>
